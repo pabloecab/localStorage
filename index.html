@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- jQuery library -->
+<script src="js/jquery.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+    <title>Mi p&aacute;gina</title>
+  </head>
+  <body id="cuerpo">
+  	<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="index.html">Mi p&aacute;gina</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="index.html">Mi p&aacute;gina</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Enlaces-Dropdown<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="http://www.google.es" target="_blank">Google</a></li>
+            <li><a href="http://www.ui1.es" target="_blank">Ui1</a></li>
+          </ul>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+          <li><a><button class="btn btn-default btn-xs" id="modo" style="color:black"></button></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <hr/>
+    <hr/>
+
+<div class="container">
+	<div class="row">
+        <div class="col-sm-12">
+            <h2>Example body text</h2>
+                <p>Nullam quis risus eget <a href="#">urna mollis ornare</a> vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+                <p><small>This line of text is meant to be treated as fine print.</small></p>
+                <p>The following snippet of text is <strong>rendered as bold text</strong>.</p>
+                <p>The following snippet of text is <em>rendered as italicized text</em>.</p>
+                <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
+        </div>
+	</div>
+
+	<div class="row">
+        <div class="col-sm-6 col-xs-12">
+            <h2>Example body text</h2>
+                <p>Nullam quis risus eget <a href="#">urna mollis ornare</a> vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+                <p><small>This line of text is meant to be treated as fine print.</small></p>
+                <p>The following snippet of text is <strong>rendered as bold text</strong>.</p>
+                <p>The following snippet of text is <em>rendered as italicized text</em>.</p>
+                <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
+        </div>
+	<div class="col-sm-6 col-xs-12">
+		<h2>Example body text</h2>
+			<p>Nullam quis risus eget <a href="#">urna mollis ornare</a> vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+			<p><small>This line of text is meant to be treated as fine print.</small></p>
+			<p>The following snippet of text is <strong>rendered as bold text</strong>.</p>
+			<p>The following snippet of text is <em>rendered as italicized text</em>.</p>
+			<p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
+	</div>
+	</div>
+</div>
+    <script>
+    localStorage.memoria = ( localStorage.memoria || 0 );
+    
+    if (localStorage.memoria == 1){
+        $("#cuerpo").toggleClass("down");
+        $("#modo").toggleClass("pulsar");
+        $("#modo").html('Tema oscuro');
+    }
+    else{
+        $("#modo").html('Tema claro');
+    }
+        
+    $("#modo").on("click", function(){
+    console.log(localStorage.memoria);
+        if ( localStorage.memoria == 0 ){
+            $("#cuerpo").toggleClass("down");
+            $(this).toggleClass("pulsar");
+            $(this).html('Tema oscuro');
+            localStorage.memoria=1;
+        }
+        else{
+            $("#cuerpo").toggleClass("down");
+            $(this).toggleClass("pulsar");
+            $(this).html('Tema claro');
+            localStorage.memoria=0;      
+        }
+    })
+    </script>
+  </body>
+</html>
